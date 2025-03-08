@@ -10,7 +10,7 @@
     },
     "Namaste React");
     const container = React.createElement("div",{
-        id: "container1"
+        id: "container"
     },
     [header1, header2]);
     root.render(container);
