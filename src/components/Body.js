@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import RestaurantCardShimmer from "./RestaurantCardShimmer";
 import { Link } from "react-router-dom";
 import useOnline from "../utils/useOnline";
+import useLocalStorage from "../utils/useLocalStorage";
 
 function filterRestaurants(searchText, restaurants) {
     return restaurants.filter( r => r.info.name.includes(searchText));
@@ -12,6 +13,12 @@ function filterRestaurants(searchText, restaurants) {
 
 
 const Body = () => {
+
+    const item = useLocalStorage();
+    console.log(item.FirstName);
+    console.log(item.LastName);
+    // console.log(item.getFirstName("FirstName"));
+    // console.log(item.getLastName("LastName"));
  const [searchText, setSearchText] = useState();
  const [allRestaurants, setAllRestaurants] = useState([]);
  const [filteredRestaurants, setFilteredRestaurants] = useState([]);
